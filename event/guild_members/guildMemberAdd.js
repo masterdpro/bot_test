@@ -10,12 +10,12 @@ module.exports = {
             .setAuthor({name: `${member.user.tag}`, iconURL: member.user.displayAvatarURL() })
             .setColor ("RANDOM")
             .setDescription(` bienvenue a toi ${member.user} passe un bon en tant que pro ;)
-            tu es sur discord depuis (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>) wow <:kanna_wow:1016847484363997274> va jeter un coup d'oeil sur <#807450039165255710> pour voir les regles <:yay:1013885224200974437>
+            tu es sur discord depuis (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>) wow <:kanna_wow:1016847484363997274> \n va jeter un coup d'oeil sur <#807450039165255710> pour voir les regles <:yay:1013885224200974437>
             `)
             .setTimestamp()
             .setFooter({ text: 'la belle personne a rejoint'});
         
-        const wlcChannel = client.channels.cache.get('970796880252534814');
+        const wlcChannel = client.channels.cache.get('807450039165255710');
         wlcChannel.send({ embeds: [embed] });
     },
  };
