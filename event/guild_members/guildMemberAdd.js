@@ -8,7 +8,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setAuthor({name: `${member.user.tag}`, iconURL: member.user.displayAvatarURL() })
-            .setColor (RANDOM)
+            .setColor ("RANDOM")
             .setDescription(` bienvenue a toi ${member.user} passe un bon en tant que pro ;)
             φ nom d'utilisateur: ${member}
             φ créé le : <t:${parseInt(member.user.createdTimestamp / 1000)}:f>  (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>)
