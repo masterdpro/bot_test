@@ -1,5 +1,5 @@
 const { MessageEmbed} = require('discord.js');
-const { runInteraction } = require('./test');
+
 
 module.exports = {
     name: 'say', 

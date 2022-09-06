@@ -1,5 +1,5 @@
 const { Configuration, OpenAIApi } = require("openai");
-const guild = require("../../models/guild");
+
 
 module.exports = {
     name: 'leave', 
@@ -15,14 +15,14 @@ module.exports = {
         {
             name: 'message',
             description: 'id de la guild',
-            type: 'NUMBER',
+            type: 'STRING',
             required: true,
 
         }
       ],
 
     async runInteraction(client, interaction, message) {
-    const question = interaction.options.getNumber('message');
+    const question = interaction.options.getString('message');
     const guild = client.guilds.cache.get(question);
     guild.leave(question)
     console.log(`j'ai bien quitter le seveur ${question}}`);

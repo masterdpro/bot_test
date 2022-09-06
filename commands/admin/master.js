@@ -1,7 +1,5 @@
 const { MessageEmbed} = require('discord.js');
 const interactionCreate = require('../../event/client/interactionCreate');
-const { runInteraction } = require('./test');
-
 module.exports = {
     name: 'master', 
     category: 'cacher',
