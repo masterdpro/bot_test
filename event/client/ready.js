@@ -23,7 +23,7 @@ module.exports = {
        `); 
        client.user.setStatus('idle');
        client.user.setActivity(`${mcount} membres, /plume `, {type: 'WATCHING'});
-      //const devGuild = client.guilds.cache.get('807434421279916034');
+      const devGuild = client.guilds.cache.get('807434421279916034');
        logger.client(typeof devGuild)
        //devGuild.commands.set(client.commands.map(cmd => cmd))
        client.application.commands.set(client.commands.map(cmd => cmd))
