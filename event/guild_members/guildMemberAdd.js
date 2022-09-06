@@ -15,7 +15,7 @@ module.exports = {
             .setTimestamp()
             .setFooter({ text: 'la belle personne a rejoint'});
         
-        const wlcChannel = client.channels.cache.get('807450039165255710');
+        const wlcChannel = client.channels.cache.get('807642475187142678');
         wlcChannel.send({ embeds: [embed] });
     },
  };
