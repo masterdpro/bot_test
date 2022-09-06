@@ -1,47 +1,31 @@
 const { Configuration, OpenAIApi } = require("openai");
+const guild = require("../../models/guild");
 
 module.exports = {
-    name: 'ai', 
+    name: 'leave', 
     category: 'admin',
     permissions: ['ADMINISTRATOR'],
     ownerOnly: true,
     devl: false,
-    usage: 'say [message que tu veux que je dise]',
-    examples: ['say je suis le meilleur'],
-    description: 'je revois le message que tu me demande de dire',
+    usage: 'leave [guild ID]',
+    examples: ['leave 384284234823'],
+    description: 'je quite :D',
 
     options: [
         {
             name: 'message',
-            description: 'message que tu veux que je dise',
-            type: 'STRING',
+            description: 'id de la guild',
+            type: 'NUMBER',
             required: true,
 
         }
       ],
 
     async runInteraction(client, interaction, message) {
-    const question = interaction.options.getString('message');
+    const question = interaction.options.getNumber('message');
 
-    const configuration = new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-      });
-       const openai = new OpenAIApi(configuration);
-       
-
-       const completion = await openai.createCompletion({
-        model: "text-davinci-002",
-        prompt: `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: "`,
-        temperature: 0.9,
-        max_tokens: 150,
-        top_p: 1,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.6,
-        stop: [" Human:", " AI:"],
-      });
-
-    interaction.channel.send(`${completion.data.choices[0].text}`); 
-    console.log(completion.data.choices[0].text);
+    guild.leave(question)
+    console.log(`j'ai bien quitter le seveur ${question}}`);
     }
     
 };
