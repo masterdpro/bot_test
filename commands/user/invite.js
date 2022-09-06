@@ -9,20 +9,12 @@ module.exports = {
     devl: false,
     usage: 'invite',
     examples: ['invite'],
-    description: 'invitation du bot',
-    run(client, message, args)  {
-        const embed = new MessageEmbed()
-        .setThumbnail(client.user.displayAvatarURL())
-        .setTitle('► clique la pour inviter plume-bot \n dans ton/tes serveurs ◄')
-        .setURL('https://discord.com/api/oauth2/authorize?client_id=962787860644266046&permissions=8&scope=applications.commands%20bot')
-        .setFooter({ text: message.author.username, iconURL: message.author.displayAvatarURL()});
-        message.channel.send({ embeds: [embed] });
-    },
+    description: 'voir ton nombre d\'invitation',
     runInteraction (client, interaction)  {
         const embed = new MessageEmbed()
         .setThumbnail(client.user.displayAvatarURL())
-        .setTitle('► clique la pour inviter plume-bot \n dans ton/tes serveurs ◄')
-        .setURL('https://discord.com/api/oauth2/authorize?client_id=962787860644266046&permissions=8&scope=applications.commands%20bot')
+        .setTitle('voici ton nombre total d\'invitation')
+        .setDescription('tu as **143** invitation \n || nah la commande est toujours en devloppement, je t\'invite a faire /invtes sa marche mieux ^^ ||')
         .setFooter({ text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()});
         interaction.reply({ embeds: [embed] });
         

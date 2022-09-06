@@ -7,7 +7,7 @@ module.exports = {
     usage: 'voc',
     examples: ['voc'],
     description: 'cette commande sera bientôt disponible. ',
-    run (client, message, args, each) {
-    message.channel.send('sa arrive bientot')
+    runInteraction (client, message, args, each) {
+    interactiom.reply('toujours en dev sorry')
     }
 }
