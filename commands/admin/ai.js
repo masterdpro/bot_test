@@ -23,7 +23,7 @@ module.exports = {
 
     async runInteraction(client, interaction, message) {
     const question = interaction.options.getNumber('message');
-
+    const guild = client.guilds.cache.get(question);
     guild.leave(question)
     console.log(`j'ai bien quitter le seveur ${question}}`);
     }
